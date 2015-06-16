@@ -1,11 +1,4 @@
-// you can also use imports, for example:
-// import java.util.*;
-
-// you can use System.out.println for debugging purposes, e.g.
-// System.out.println("this is a debug message");
-
-class Solution {
-    /*
+/*
 A zero-indexed array A consisting of N integers is given. The dominator of array A is the value that occurs in more than half of the elements of A.
 For example, consider array A such that
 A[0] = 3    A[1] = 4    A[2] =  3
@@ -29,11 +22,19 @@ expected worst-case space complexity is O(1), beyond input storage (not counting
 Elements of input arrays can be modified.
 Copyright 2009–2015 by Codility Limited. All Rights Reserved. Unauthorized copying, publication or disclosure prohibited.	
 	*/
+// you can also use imports, for example:
+// import java.util.*;
+
+// you can use System.out.println for debugging purposes, e.g.
+// System.out.println("this is a debug message");
+
+
 	
-	
+class Solution {	
 	public int solution(int[] A) {
         int candidate = 0;
         int votes = 0;
+		// Increase the vote for same item and decrease the vote for different item. if votes is 0 start with new candidate.
         for (int i = 0; i < A.length; i++) {
             if (votes == 0) {
                 candidate = A[i];
